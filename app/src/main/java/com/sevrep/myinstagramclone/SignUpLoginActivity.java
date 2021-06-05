@@ -49,6 +49,7 @@ public class SignUpLoginActivity extends AppCompatActivity implements View.OnCli
                     if (e == null) {
                         FancyToast.makeText(this, appUser.get("username") + " saved successfully!", Toast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
                         clearSignUp();
+                        goToWelcome();
                     } else {
                         FancyToast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT, FancyToast.ERROR, true).show();
                     }
@@ -91,6 +92,10 @@ public class SignUpLoginActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onBackPressed() {
+        goBack();
+    }
+
+    private void goBack() {
         Intent signUpActivity = new Intent(this, SignUpActivity.class);
         startActivity(signUpActivity);
         this.finish();
