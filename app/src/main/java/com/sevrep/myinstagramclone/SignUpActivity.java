@@ -1,5 +1,6 @@
 package com.sevrep.myinstagramclone;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -35,9 +36,12 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         edtKickPower = findViewById(R.id.edtKickPower);
 
         Button btnGetAllData = findViewById(R.id.btnGetAllData);
-        btnGetAllData.setOnClickListener(this);
         Button btnSave = findViewById(R.id.btnSave);
+        Button btnNextActivity = findViewById(R.id.btnNextActivity);
+
+        btnGetAllData.setOnClickListener(this);
         btnSave.setOnClickListener(this);
+        btnNextActivity.setOnClickListener(this);
 
         TextView txtGetData = findViewById(R.id.txtGetData);
         txtGetData.setOnClickListener(v -> {
@@ -77,11 +81,13 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         } else if (viewId == R.id.btnGetAllData) {
             allKickboxers = new StringBuilder();
             ParseQuery<ParseObject> parseQueryAll = ParseQuery.getQuery("Kickboxer");
+            parseQueryAll.whereGreaterThanOrEqualTo("punchPower", 1500);
+            parseQueryAll.setLimit(2);
             parseQueryAll.findInBackground((objects, e) -> {
                 if (e == null) {
                     if (objects.size() > 0) {
                         for (ParseObject kickboxers : objects)
-                            allKickboxers.append(kickboxers.get("name")).append("\n");
+                            allKickboxers.append(kickboxers.get("name")).append(" punchPower: ").append(kickboxers.get("punchPower")).append("\n");
                         FancyToast.makeText(SignUpActivity.this, allKickboxers, Toast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
                     } else {
                         FancyToast.makeText(SignUpActivity.this, "objects is empty", Toast.LENGTH_SHORT, FancyToast.ERROR, true).show();
@@ -90,6 +96,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                     FancyToast.makeText(SignUpActivity.this, e.getMessage(), Toast.LENGTH_SHORT, FancyToast.ERROR, true).show();
                 }
             });
+        } else if (viewId == R.id.btnNextActivity) {
+            Intent nextActivity = new Intent(this, SignUpLoginActivity.class);
+            startActivity(nextActivity);
+            this.finish();
         }
 
     }
