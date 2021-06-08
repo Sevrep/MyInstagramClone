@@ -1,20 +1,10 @@
 <resources>
     <string name="app_name">MyInstagramClone</string>
-    <string name="get_all_data">Get all data</string>
-    <string name="get_data_from_server">Get data from server</string>
-    <string name="kick_power">Kick power</string>
-    <string name="save_to_server">Save to server</string>
-    <string name="name">Name</string>
-    <string name="punch_speed">Punch speed</string>
-    <string name="punch_power">Punch power</string>
-    <string name="kick_speed">Kick speed</string>
-    <string name="next">Next</string>
-    <string name="sign_up">Sign Up</string>
     <string name="todo">TODO</string>
-    <string name="email">Email</string>
-    <string name="password">Password</string>
+    <string name="sign_up">Sign Up</string>
     <string name="login">Login</string>
-    <string name="enter_username">Enter username...</string>
-    <string name="enter_email">Enter email...</string>
-    <string name="enter_password">Enter password...</string>
+    <string name="enter_username">Enter username…</string>
+    <string name="enter_email">Enter email…</string>
+    <string name="enter_password">Enter password…</string>
+
 </resources>
