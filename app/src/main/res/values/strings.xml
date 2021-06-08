@@ -9,4 +9,12 @@
     <string name="punch_power">Punch power</string>
     <string name="kick_speed">Kick speed</string>
     <string name="next">Next</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="todo">TODO</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="enter_username">Enter username...</string>
+    <string name="enter_email">Enter email...</string>
+    <string name="enter_password">Enter password...</string>
 </resources>
