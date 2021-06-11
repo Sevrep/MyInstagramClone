@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MyInstagramClone</string>
     <string name="todo">TODO</string>
-    <string name="sign_up">Sign Up</string>
+    <string name="sign_up">Sign up</string>
     <string name="login">Login</string>
     <string name="enter_username">Enter username…</string>
     <string name="enter_email">Enter email…</string>
