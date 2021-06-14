@@ -49,7 +49,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         btnLogin.setOnClickListener(this);
 
         if (ParseUser.getCurrentUser() != null) {
-//            ParseUser.logOut();
             goToSocialMedia();
         }
 
