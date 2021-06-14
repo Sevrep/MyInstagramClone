@@ -75,6 +75,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         if (user != null && e == null) {
                             FancyToast.makeText(this, "Welcome, " + user.get("username") + "!", Toast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
                             clearLogin();
+                            goToSocialMedia();
                         } else {
                             FancyToast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT, FancyToast.ERROR, true).show();
                         }
@@ -126,6 +127,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void clearLogin() {
         edtLoginEmail.setText("");
         edtLoginPassword.setText("");
+    }
+
+    private void goToSocialMedia() {
+        Intent nextActivity = new Intent(this, SocialMediaActivity.class);
+        startActivity(nextActivity);
+        this.finish();
     }
 
 }

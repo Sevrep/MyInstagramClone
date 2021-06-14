@@ -49,7 +49,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         btnLogin.setOnClickListener(this);
 
         if (ParseUser.getCurrentUser() != null) {
-            ParseUser.logOut();
+//            ParseUser.logOut();
+            goToSocialMedia();
         }
 
     }
@@ -96,6 +97,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
                         if (e == null) {
                             FancyToast.makeText(this, appUser.get("username") + " saved successfully!", Toast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
                             clearSignUp();
+                            goToSocialMedia();
                         } else {
                             FancyToast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT, FancyToast.ERROR, true).show();
                         }
@@ -151,6 +153,12 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         edtSignEmail.setText("");
         edtSignUsername.setText("");
         edtSignPassword.setText("");
+    }
+
+    private void goToSocialMedia() {
+        Intent nextActivity = new Intent(this, SocialMediaActivity.class);
+        startActivity(nextActivity);
+        this.finish();
     }
 
 }
