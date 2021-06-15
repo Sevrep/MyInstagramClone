@@ -13,6 +13,8 @@
     <string name="what_are_your_hobbies">What are your hobbies?</string>
     <string name="what_is_your_favorite_sport">What is your favorite sport?</string>
     <string name="update_info">Update Info</string>
-    <string name="loading_users_please_wait">Loading users, please wait...</string>
+    <string name="loading_users_please_wait">Loading users, please wait…</string>
+    <string name="please_enter_a_description">Please enter a description for you image…</string>
+    <string name="share_image">Share Image</string>
 
 </resources>
