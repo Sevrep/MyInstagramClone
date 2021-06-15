@@ -34,8 +34,8 @@ public class ProfileFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        final ParseUser parseUser = ParseUser.getCurrentUser();
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+        final ParseUser parseUser = ParseUser.getCurrentUser();
 
         ConstraintLayout profileConstraintLayout = view.findViewById(R.id.profileConstraintLayout);
         profileConstraintLayout.setOnClickListener(e -> hideKeyboard(getActivity()));
