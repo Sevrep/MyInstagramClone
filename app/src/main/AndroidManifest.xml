@@ -12,6 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyInstagramClone">
+        <activity android:name=".UsersPostsActivity"></activity>
         <activity android:name=".SocialMediaActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignUpActivity">
