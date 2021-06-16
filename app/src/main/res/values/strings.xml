@@ -16,5 +16,7 @@
     <string name="loading_users_please_wait">Loading users, please wait…</string>
     <string name="please_enter_a_description">Please enter a description for you image…</string>
     <string name="share_image">Share Image</string>
+    <string name="post_image">Post Image</string>
+    <string name="logout">Logout</string>
 
 </resources>

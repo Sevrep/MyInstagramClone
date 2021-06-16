@@ -125,24 +125,23 @@ public class SharePictureFragment extends Fragment implements View.OnClickListen
     public void onActivityResult(int requestCode, int resultCode, @Nullable @org.jetbrains.annotations.Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == 2000) {
-            if (resultCode == Activity.RESULT_OK) {
-                try {
-                    Uri selectedImage = data.getData();
-                    String[] filePathColumn = {MediaStore.Images.Media.DATA};
+        if (requestCode == 2000 && resultCode == Activity.RESULT_OK) {
+            try {
+                Uri selectedImage = data.getData();
+                String[] filePathColumn = {MediaStore.Images.Media.DATA};
 
-                    Cursor cursor = getActivity().getContentResolver().query(selectedImage, filePathColumn, null, null, null);
-                    cursor.moveToFirst();
-                    int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
-                    String picturePath = cursor.getString(columnIndex);
-                    cursor.close();
+                Cursor cursor = getActivity().getContentResolver().query(selectedImage, filePathColumn, null, null, null);
+                cursor.moveToFirst();
+                int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+                String picturePath = cursor.getString(columnIndex);
+                cursor.close();
 
-                    receivedImage = BitmapFactory.decodeFile(picturePath);
-                    imgPlace.setImageBitmap(receivedImage);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                receivedImage = BitmapFactory.decodeFile(picturePath);
+                imgPlace.setImageBitmap(receivedImage);
+            } catch (Exception e) {
+                e.printStackTrace();
             }
+
         }
     }
 
